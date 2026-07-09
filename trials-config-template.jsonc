@@ -1,0 +1,195 @@
+{
+  // Version number for this config format. Keep this as 2 unless the app changes.
+  "version": 2,
+
+  // Human-readable name for the config style. Do not change unless the app changes.
+  "configFormat": "self-contained-trial-containers",
+
+  // Optional note about where this file came from, such as an Excel workbook name.
+  "generatedFrom": "",
+
+  // Optional note for future editors.
+  "generatedNote": "Each trial is self-contained. Copy one trial block for each new study.",
+
+  // Main list of trials. Add one trial object inside this array for each study.
+  "trials": [
+    {
+      // Stable trial ID. Use short uppercase text with no spaces if possible.
+      "id": "",
+
+      // Trial status. Use "active", "paused", or "inactive". Inactive trials are hidden.
+      "status": "active",
+
+      // Basic trial information shown on the trial card.
+      "overview": {
+        // Full protocol or study name.
+        "title": "",
+
+        // Short display name, such as "FASTEST" or "ASPIRE".
+        "shortName": "",
+
+        // Main stroke type. Examples: "Ischemic", "Hemorrhagic", "Ischemic/TIA".
+        "strokeType": "",
+
+        // Brief description of the study population or trial category.
+        "category": ""
+      },
+
+      // Screening logic and questions for this trial.
+      "screening": {
+        // Initial screening uses only the front-page fields.
+        "initial": {
+          // Simple front-page criteria. Use null if no limit applies.
+          "criteria": {
+            // Minimum age allowed, or null if no minimum.
+            "minAge": null,
+
+            // Maximum age allowed, or null if no maximum.
+            "maxAge": null,
+
+            // Minimum NIHSS allowed, or null if no minimum.
+            "nihssMin": null,
+
+            // Maximum NIHSS allowed, or null if no maximum.
+            "nihssMax": null,
+
+            // Minimum premorbid/baseline mRS, or null if no minimum.
+            "mrsMin": null,
+
+            // Maximum premorbid/baseline mRS, or null if no maximum.
+            "mrsMax": null,
+
+            // Maximum hours from last known well/onset. Examples: 4.5, 6, 24, 168.
+            "lknHoursMax": null,
+
+            // Stroke type for initial matching. Examples: "Ischemic", "Hemorrhagic", "Ischemic/TIA".
+            "strokeType": "",
+
+            // More specific population note shown on the trial card.
+            "strokeSubtype": "",
+
+            // Gender requirement. Use "Any" unless the protocol requires otherwise.
+            "gender": "Any"
+          },
+
+          // Optional extra initial rules. These should only use age, nihss, lknHours, or strokeType.
+          "logicRules": [
+            {
+              // Unique rule ID within this trial.
+              "id": "",
+
+              // Variable to check. Initial variables: age, nihss, lknHours, strokeType.
+              "variable": "",
+
+              // Operator. Supported: >=, <=, >, <, ==, =, !=, contains.
+              "operator": "",
+
+              // Value to compare against. Use a number for numeric rules or text for text rules.
+              "value": null,
+
+              // Message shown when the rule fails.
+              "failureReason": ""
+            }
+          ]
+        },
+
+        // Secondary screening appears after a user opens this trial's card.
+        "secondary": {
+          // Trial-specific questions. Add as many as needed.
+          "questions": [
+            {
+              // Unique question ID. Example: Q001.
+              "id": "",
+
+              // Question text shown to the user.
+              "text": "",
+
+              // Input type. Supported: yesno, select, number, textarea, text.
+              "inputType": "yesno",
+
+              // Dropdown choices. For yesno, use ["Yes", "No", "Unknown"] if uncertain.
+              "options": [
+                "Yes",
+                "No",
+                "Unknown"
+              ],
+
+              // Variable name used by logic rules. Example: baselineMrs, aspects, ichVolume.
+              "variable": "",
+
+              // Whether the field should be treated as required.
+              "required": true
+            }
+          ],
+
+          // Secondary logic rules. These can use variables from secondary questions.
+          "logicRules": [
+            {
+              // Unique rule ID within this trial.
+              "id": "",
+
+              // Variable to check. Must match a question's variable name, or an initial variable.
+              "variable": "",
+
+              // Operator. Supported: >=, <=, >, <, ==, =, !=, contains.
+              "operator": "",
+
+              // Value to compare against.
+              "value": null,
+
+              // Message shown when the rule fails.
+              "failureReason": ""
+            }
+          ],
+
+          // Plain-language protocol criteria shown in the secondary panel.
+          "criteriaText": {
+            // Inclusion criteria. Add one sentence per list item.
+            "inclusion": [
+              ""
+            ],
+
+            // Exclusion criteria. Add one sentence per list item.
+            "exclusion": [
+              ""
+            ]
+          }
+        }
+      },
+
+      // Protocol, PDF, Word document, Box link, SharePoint link, or study website.
+      "resources": {
+        "links": [
+          {
+            // Button text shown to users.
+            "label": "Protocol / source document",
+
+            // Full link. Leave blank if none is available.
+            "url": ""
+          }
+        ]
+      },
+
+      // Contact information shown at the bottom of the secondary screening panel.
+      "contact": {
+        // Principal investigator name.
+        "pi": "",
+
+        // Coordinator name.
+        "coordinator": "",
+
+        // Coordinator email.
+        "coordinatorEmail": "",
+
+        // Coordinator phone or pager.
+        "coordinatorPhone": "",
+
+        // Backup contact, if any.
+        "backupContact": "",
+
+        // Any extra instructions for next steps.
+        "notes": ""
+      }
+    }
+  ]
+}

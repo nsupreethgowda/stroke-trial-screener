@@ -1,0 +1,26 @@
+Stroke Trial Screening Tool - Test Package
+
+Files in this package:
+- index.html: the one-page screening website.
+- trials-config.json: the active trial data used by the website.
+- trials-config.js: fallback copy of the active trial data for opening index.html directly.
+- trials-config-blank.json: a blank usable config for starting a new trial set.
+- trials-config-template.jsonc: a commented guide for editing/creating trial configs.
+
+How to test on another computer:
+1. Unzip the folder.
+2. Keep all files in the same folder.
+3. Open index.html in a browser.
+
+If the browser blocks loading trials-config.json:
+1. Open a terminal or command prompt in the unzipped folder.
+2. Run: python -m http.server 8000
+3. Open: http://127.0.0.1:8000/index.html
+
+To update trial data:
+1. Edit trials-config.json.
+2. Also update trials-config.js if you want double-click file opening to keep working.
+3. Keep the same overall structure.
+4. Refresh the browser.
+
+Use trials-config-template.jsonc as the commented guide. The website itself uses trials-config.json.

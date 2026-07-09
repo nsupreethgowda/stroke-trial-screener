@@ -1,0 +1,56 @@
+﻿window.TRIAL_CONFIG = {
+  "version": 2,
+  "configFormat": "self-contained-trial-containers",
+  "generatedFrom": "",
+  "generatedNote": "Blank starter config. Copy one trial object for each study.",
+  "trials": [
+    {
+      "id": "",
+      "status": "active",
+      "overview": {
+        "title": "",
+        "shortName": "",
+        "strokeType": "",
+        "category": ""
+      },
+      "screening": {
+        "initial": {
+          "criteria": {
+            "minAge": null,
+            "maxAge": null,
+            "nihssMin": null,
+            "nihssMax": null,
+            "mrsMin": null,
+            "mrsMax": null,
+            "lknHoursMax": null,
+            "strokeType": "",
+            "strokeSubtype": "",
+            "gender": "Any"
+          },
+          "logicRules": []
+        },
+        "secondary": {
+          "questions": [],
+          "logicRules": [],
+          "criteriaText": {
+            "inclusion": [],
+            "exclusion": []
+          }
+        }
+      },
+      "resources": {
+        "links": []
+      },
+      "contact": {
+        "pi": "",
+        "coordinator": "",
+        "coordinatorEmail": "",
+        "coordinatorPhone": "",
+        "backupContact": "",
+        "notes": ""
+      }
+    }
+  ]
+}
+;
+
